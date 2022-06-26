@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Login Here !</h1>
+    <div class="form">
+      <div class="input-boxes">
+        <input
+          #email
+          type="email"
+          name="email"
+          placeholder="Email"
+          class="form"
+          required
+        />
+        <input
+          #password
+          type="password"
+          name="password"
+          placeholder="Password"
+          class="form"
+          required
+          min="6"
+        />
+      </div>
+      <button class="btn" (click)="login()">Login !</button>
+      <div class="alert" *ngIf="errorString">
+        {{ errorString }}
+      </div>
+      <h5>Don't have an account yet?</h5>
+      <h5><a [routerLink]="['/signup']">Click here</a> to sign up!</h5>
+    </div>
+  </div>

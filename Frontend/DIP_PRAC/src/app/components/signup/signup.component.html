@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Signup Here !</h1>
+    <div class="form">
+      <div class="input-boxes">
+        <input #surname type="surname" required placeholder="surname"> 
+        <input #firstname type="firstname" required placeholder="firstname"> 
+        <input #phone type="number" required placeholder="phone">
+        <input
+          #email
+          type="email"
+          name="email"
+          placeholder="Email"
+          class="form"
+          required
+        />
+        <input
+          #password
+          type="password"
+          name="password"
+          placeholder="Password"
+          class="form"
+          required
+          min="6"
+        />
+        <!-- selector with admin role and user role -->
+      
+        <select *ngIf="IsAdmin == true" (change)="onChange($event)" required placeholder="role">
+        <option value="">Select Role</option>
+          <option value="Admin">Admin</option>
+          <option value="User">User</option>
+        </select>
+      
+      </div>
+      <button class="btn" (click)="login()">Signup !</button>
+    </div>
+    <div class="alert" *ngIf="errorString">
+      {{ errorString }}
+    </div>
+  </div>
